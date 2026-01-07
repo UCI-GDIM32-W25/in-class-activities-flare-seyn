@@ -18,11 +18,21 @@ Q2 x= 2
 
 
 Q3: This code prints "hello world" to the Unity Console every frame.
+
+
 Q4 : monobehavior 
+
+
 Q5  prints x=10 once when game starts 
+
+
 Q6. 10 is argument purpose: the value passed to the method 
 int x is parameter and receives value inside the method
+
+
 Q7: its wrong because Transform.Translate() is being called as if it were static.
+
+
 Q8: _playerTransform.Translate(_direction);
 
 Activity 3
