@@ -36,6 +36,8 @@ Q7: its wrong because Transform.Translate() is being called as if it were static
 Q8: _playerTransform.Translate(_direction);
 
 Activity 3
+
+
 https://docs.google.com/document/d/1WBU7pfuodNjMCsFslRRQIIFg72YVv2mvCpL_aqet-pE/edit?usp=sharing
 
 - Create bullet points by writing dashes.
