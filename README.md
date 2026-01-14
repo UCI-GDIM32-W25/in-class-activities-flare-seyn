@@ -2,7 +2,7 @@
 ## Instructions
 Put each week's activities under new headers like the one shown above. Headers are created with the # symbol. More # symbols = smaller header.
 
-
+##week 1
 Hit enter TWICE to create a new line.
 
 
@@ -43,5 +43,4 @@ https://docs.google.com/document/d/1WBU7pfuodNjMCsFslRRQIIFg72YVv2mvCpL_aqet-pE/
 - Create bullet points by writing dashes.
 - Here's another bullet point entry.
 
-
-Remove all placeholder text in order to get full credit for README file formatting.
+##week2
