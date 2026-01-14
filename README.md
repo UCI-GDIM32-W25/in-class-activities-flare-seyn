@@ -46,3 +46,9 @@ ashes.
 
 ## week2
 ![81184493cd6f2bbfa57dec33806ea1b5](https://github.com/user-attachments/assets/c8fd1248-61a5-4b16-b280-5e20b55ea29d)
+
+
+# link
+
+
+https://github.com/UCI-GDIM32-W25/mg2-flare-seyn?tab=readme-ov-file
