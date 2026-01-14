@@ -40,7 +40,8 @@ Activity 3
 
 https://docs.google.com/document/d/1WBU7pfuodNjMCsFslRRQIIFg72YVv2mvCpL_aqet-pE/edit?usp=sharing
 
-- Create bullet points by writing dashes.
+- Create bullet points by writing d![81184493cd6f2bbfa57dec33806ea1b5](https://github.com/user-attachments/assets/c8fd1248-61a5-4b16-b280-5e20b55ea29d)
+ashes.
 - Here's another bullet point entry.
 
 ## week2
