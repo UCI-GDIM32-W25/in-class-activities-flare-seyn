@@ -80,3 +80,4 @@ ashes.
 
 
 # Activities 0-2
+Partner name: Michael Lopez
