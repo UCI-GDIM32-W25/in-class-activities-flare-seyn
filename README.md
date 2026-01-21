@@ -83,5 +83,5 @@ ashes.
 Partner name: Michael Lopez
 
 # Activity 3
-![bba823d852505944caaa6d54e967571b](https://github.com/user-attachments/assets/37068389-c1de-4e36-8fdf-8bc1e3cc2c20)
+<img width="913" height="690" alt="User Research Plan Breakdown" src="https://github.com/user-attachments/assets/37068389-c1de-4e36-8fdf-8bc1e3cc2c20" />
 
