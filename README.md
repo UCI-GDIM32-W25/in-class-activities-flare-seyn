@@ -10,8 +10,7 @@ Activity 1
 
 <<<<<<< HEAD
 
-=======
->>>>>>> 304c3cbb9fb2dc463d91e7161b3b61d7d68697fa
+
 one piece of advice I received is to frequently go to office hours whenever something is beyond my contol
 
 
@@ -23,7 +22,7 @@ Activity 2
 Q1 : x=10
 =======
 Q1: x=10
->>>>>>> 304c3cbb9fb2dc463d91e7161b3b61d7d68697fa
+
 
 
 Q2 x= 2
@@ -42,7 +41,7 @@ Q3: This code prints "hello world" to the Unity Console every frame.
 
 
 Q4 : monobehavior 
->>>>>>> 304c3cbb9fb2dc463d91e7161b3b61d7d68697fa
+
 
 
 Q5  prints x=10 once when game starts 
