@@ -81,3 +81,7 @@ ashes.
 
 # Activities 0-2
 Partner name: Michael Lopez
+
+# Activity 3
+![bba823d852505944caaa6d54e967571b](https://github.com/user-attachments/assets/37068389-c1de-4e36-8fdf-8bc1e3cc2c20)
+
