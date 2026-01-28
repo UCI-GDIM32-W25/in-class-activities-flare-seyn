@@ -99,3 +99,6 @@ When multiple Locator objects are added to the scene, only one remains when the 
 
 After refactoring, the pigeon no longer directly calls methods on the UI, VFX, or seagulls. Instead, it fires a coo event that other systems subscribe to. This decouples the pigeon from the rest of the game systems and allows new reactions to be added without modifying the pigeon code.
 
+# MG4 break down
+![91e752488d6392d4c5f81aa912ada187_720](https://github.com/user-attachments/assets/7eb08da7-4ca2-4786-b8b7-a4cd4e618831)
+<img width="913" height="690" alt="User Research Plan Breakdown" src="https://github.com/user-attachments/assets/7eb08da7-4ca2-4786-b8b7-a4cd4e618831" />
