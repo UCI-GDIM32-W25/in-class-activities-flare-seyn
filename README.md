@@ -91,3 +91,11 @@ Partner name: Michael Lopez
 
 # Activity 0
 Partner name: Michael Lopez
+
+# answering question
+Add multiple Locator objects to the Scene. What happens to the Locator objects when you run the game, and why?
+
+When multiple Locator objects are added to the scene, only one remains when the game runs. This is because the Locator uses the Singleton pattern, which destroys any duplicate instances during Awake(). This ensures that there is only one global access point to the player.
+
+After refactoring, the pigeon no longer directly calls methods on the UI, VFX, or seagulls. Instead, it fires a coo event that other systems subscribe to. This decouples the pigeon from the rest of the game systems and allows new reactions to be added without modifying the pigeon code.
+
