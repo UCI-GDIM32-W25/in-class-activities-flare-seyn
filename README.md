@@ -102,3 +102,10 @@ After refactoring, the pigeon no longer directly calls methods on the UI, VFX, o
 # MG4 break down
 
 <img width="913" height="690" alt="User Research Plan Breakdown" src="https://github.com/user-attachments/assets/7eb08da7-4ca2-4786-b8b7-a4cd4e618831" />
+
+# MG4 first commit and description
+https://github.com/flare-seyn/HW4/commit/eb1d40d3a7294e319ebab2157ca2a7a5fda604c0
+
+I've created a new untiy project and forked the HW4 from prof's post.
+I downloaded the spirtes and made sprite editor slicing
+I added some piece of codes shapesbased on the break down mg4
