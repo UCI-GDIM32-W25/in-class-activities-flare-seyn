@@ -109,3 +109,39 @@ https://github.com/flare-seyn/HW4/commit/eb1d40d3a7294e319ebab2157ca2a7a5fda604c
 I've created a new untiy project and forked the HW4 from prof's post.
 I downloaded the spirtes and made sprite editor slicing
 I added some piece of codes shapesbased on the break down mg4
+
+## Week5
+
+# Activity 1 
+
+I think the overall design choice—using an Item abstract class plus an IBreakable interface—is solid, because it cleanly separates what every item can do (be “used”) from extra behavior only some items have (durability, damage, breaking). In the example, ElvenSword still fits naturally as an Item even though it can’t break, while Torch and Axe opt into IBreakable. That’s a good use of an interface: it avoids forcing every item to carry durability logic just because some items need it.
+
+If I were building a bigger project, I’d keep the same general structure but make a few changes for scalability. First, I’d probably move common durability logic into a shared base class like BreakableItem : Item, IBreakable, so Axe and Torch don’t duplicate the same “subtract durability → log → check break” code. Second, I might rename Damage(float damage) to something like TakeDamage(float amount) for clarity, and consider whether “damage” should always mean durability loss (since items aren’t living entities). Overall, though, the separation of responsibilities here feels clean and I’d keep that pattern.
+
+# Activity 2
+
+for week5 demo2 the MVC pattern is implemented by separating game data, visual display, and control logic across different classes. The Model is represented by the ScriptableObject classes ItemW5Demo2 and EnemyStats, which store item data, enemy stats, and dialogue lines. The player’s inventory list (List<ItemW5Demo2>) also functions as part of the Model, since it represents the current game state rather than UI or input behavior.
+
+The View is handled by classes whose sole responsibility is displaying information to the player. InventoryUI manages showing and hiding the inventory panel and rendering the item list text, while DialogueBubble displays enemy dialogue and controls its visibility. These classes do not contain gameplay logic or input handling.
+
+The Controller logic lives primarily in PlayerW5Demo2 and EnemyW5Demo2. PlayerW5Demo2 processes player input for movement and inventory toggling, updates the player’s position, and passes Model data to the inventory UI. EnemyW5Demo2 checks the player’s distance, reads dialogue data from EnemyStats, and tells the dialogue View when to show or hide. Together, these controller scripts connect the Model and View, completing the MVC structure used in the scene.
+
+
+# Activity 3
+
+     # Scenario 1
+
+      For Nemo’s rhythm game, I think the best architecture is ScriptableObjects + inheritance/interfaces + MVC/events. Each “beat type” should be represented as data (what key, when it    appears, where it spawns, what it looks like, scoring windows), so I’d make a BeatData : ScriptableObject that contains fields like KeyCode requiredKey, float timeStamp, Vector2 lanePosition, maybe BeatKind (tap/hold/slide), plus references to VFX/audio cues. Then, the actual on-screen beat object would be a View MonoBehaviour like BeatView, which reads a BeatData and moves itself based on song time. For code structure, I’d use a basic parent class/abstract class like Beat or BeatBehavior with polymorphism, and then child classes like TapBeat, HoldBeat, SlideBeat for the unique behavior (e.g., hold duration checking). If I want shared “hittable” logic, an interface like IHittable could help. For the overall flow, MVC with C# events makes sense: a SongController (Controller) updates timing, a BeatManager spawns beats, and events like OnBeatHit, OnBeatMiss update the score UI (View) without hard coupling.
+      
+     # Scenario 2
+
+     For Leo’s shooter, I think the best patterns are inheritance with polymorphism + FSM + MVC/events, with ScriptableObjects to store character/weapon/ability data. The characters share core systems (health, movement, animation rig setup), so I’d make a base parent class like CharacterBase that contains shared components and hooks (movement controller, health, animator references). Then I’d use polymorphism for the unique attacks/abilities by defining an abstract ability system: either an abstract Ability class with Activate() / Cooldown() methods, or interfaces like IAbility, IAttack, IUltimate. Each character would be composed of multiple abilities rather than putting all logic directly into the character class. For the fact that characters have multiple movement/attack modes, a Finite State Machine with enums is a great fit (states like Idle, Run, Jump, Aim, Reload, CastingAbility, etc.), and the FSM would drive animation transitions cleanly. MVC with C# events is useful so the gameplay code (Model/Controller) can trigger UI updates (health bars, cooldown UI, crosshair) without directly editing UI objects. A Singleton can be appropriate for global managers like GameManager, AudioManager, or MatchStateManager, but I’d keep it limited so it doesn’t turn into “everything is global.”
+
+     # Scenario 3
+
+     For Willow’s farming sim, the best patterns are ScriptableObjects + interfaces/abstract classes + FSM + MVC/events. There are many “things” on the farm (rocks, crops, seeds, harvestables) that share some common concepts but behave differently. I’d represent item and crop types as ScriptableObjects: SeedData, CropData, ResourceNodeData (rock/tree), containing sprites, growth time, drop tables, etc. Then, in the world, I’d have MonoBehaviours like CropPlot, CropInstance, ResourceNode that reference those ScriptableObjects. To handle different interactions, I’d use interfaces like IPlantable, IHarvestable, IDamageable, IToolInteractable. That way, tools can interact with anything that supports the interface (e.g., hoe plants, axe damages trees, pickaxe damages rocks). For the player’s animations and actions, a Finite State Machine is perfect: states like Idle, Walk, Hoe, Plant, Water, Harvest, Chop, Mine, etc. The FSM would control animation and prevent conflicting actions (you can’t harvest and water at the same time). MVC with events helps keep UI clean: the inventory/hotbar UI (View) updates based on inventory changes (Model) via events like OnInventoryChanged, OnSelectedToolChanged. Again, a small Singleton (like InventoryManager or DayNightManager) can work if used carefully.
+
+# Activity 4
+
+Attendence: Nansong Sun, Rebecca Feng , Frances Nareh Kim
+Link:  https://docs.google.com/document/d/12oXcMbRqu-4vIfI7XU0rpLQhKyyF9Gy7RNBljYCJIrA/edit?tab=t.0#heading=h.y4j3q551ojs1
