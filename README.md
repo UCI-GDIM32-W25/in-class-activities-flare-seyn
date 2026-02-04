@@ -129,15 +129,16 @@ The Controller logic lives primarily in PlayerW5Demo2 and EnemyW5Demo2. PlayerW5
 
 # Activity 3
 
-     # Scenario 1
+ 
+ # Scenario 1
 
       For Nemo’s rhythm game, I think the best architecture is ScriptableObjects + inheritance/interfaces + MVC/events. Each “beat type” should be represented as data (what key, when it    appears, where it spawns, what it looks like, scoring windows), so I’d make a BeatData : ScriptableObject that contains fields like KeyCode requiredKey, float timeStamp, Vector2 lanePosition, maybe BeatKind (tap/hold/slide), plus references to VFX/audio cues. Then, the actual on-screen beat object would be a View MonoBehaviour like BeatView, which reads a BeatData and moves itself based on song time. For code structure, I’d use a basic parent class/abstract class like Beat or BeatBehavior with polymorphism, and then child classes like TapBeat, HoldBeat, SlideBeat for the unique behavior (e.g., hold duration checking). If I want shared “hittable” logic, an interface like IHittable could help. For the overall flow, MVC with C# events makes sense: a SongController (Controller) updates timing, a BeatManager spawns beats, and events like OnBeatHit, OnBeatMiss update the score UI (View) without hard coupling.
       
-     # Scenario 2
+ # Scenario 2
 
      For Leo’s shooter, I think the best patterns are inheritance with polymorphism + FSM + MVC/events, with ScriptableObjects to store character/weapon/ability data. The characters share core systems (health, movement, animation rig setup), so I’d make a base parent class like CharacterBase that contains shared components and hooks (movement controller, health, animator references). Then I’d use polymorphism for the unique attacks/abilities by defining an abstract ability system: either an abstract Ability class with Activate() / Cooldown() methods, or interfaces like IAbility, IAttack, IUltimate. Each character would be composed of multiple abilities rather than putting all logic directly into the character class. For the fact that characters have multiple movement/attack modes, a Finite State Machine with enums is a great fit (states like Idle, Run, Jump, Aim, Reload, CastingAbility, etc.), and the FSM would drive animation transitions cleanly. MVC with C# events is useful so the gameplay code (Model/Controller) can trigger UI updates (health bars, cooldown UI, crosshair) without directly editing UI objects. A Singleton can be appropriate for global managers like GameManager, AudioManager, or MatchStateManager, but I’d keep it limited so it doesn’t turn into “everything is global.”
 
-     # Scenario 3
+ # Scenario 3
 
      For Willow’s farming sim, the best patterns are ScriptableObjects + interfaces/abstract classes + FSM + MVC/events. There are many “things” on the farm (rocks, crops, seeds, harvestables) that share some common concepts but behave differently. I’d represent item and crop types as ScriptableObjects: SeedData, CropData, ResourceNodeData (rock/tree), containing sprites, growth time, drop tables, etc. Then, in the world, I’d have MonoBehaviours like CropPlot, CropInstance, ResourceNode that reference those ScriptableObjects. To handle different interactions, I’d use interfaces like IPlantable, IHarvestable, IDamageable, IToolInteractable. That way, tools can interact with anything that supports the interface (e.g., hoe plants, axe damages trees, pickaxe damages rocks). For the player’s animations and actions, a Finite State Machine is perfect: states like Idle, Walk, Hoe, Plant, Water, Harvest, Chop, Mine, etc. The FSM would control animation and prevent conflicting actions (you can’t harvest and water at the same time). MVC with events helps keep UI clean: the inventory/hotbar UI (View) updates based on inventory changes (Model) via events like OnInventoryChanged, OnSelectedToolChanged. Again, a small Singleton (like InventoryManager or DayNightManager) can work if used carefully.
 
