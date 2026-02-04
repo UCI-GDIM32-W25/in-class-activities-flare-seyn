@@ -91,3 +91,21 @@ Partner name: Michael Lopez
 
 # Activity 0
 Partner name: Michael Lopez
+
+# answering question
+Add multiple Locator objects to the Scene. What happens to the Locator objects when you run the game, and why?
+
+When multiple Locator objects are added to the scene, only one remains when the game runs. This is because the Locator uses the Singleton pattern, which destroys any duplicate instances during Awake(). This ensures that there is only one global access point to the player.
+
+After refactoring, the pigeon no longer directly calls methods on the UI, VFX, or seagulls. Instead, it fires a coo event that other systems subscribe to. This decouples the pigeon from the rest of the game systems and allows new reactions to be added without modifying the pigeon code.
+
+# MG4 break down
+
+<img width="913" height="690" alt="User Research Plan Breakdown" src="https://github.com/user-attachments/assets/7eb08da7-4ca2-4786-b8b7-a4cd4e618831" />
+
+# MG4 first commit and description
+https://github.com/flare-seyn/HW4/commit/eb1d40d3a7294e319ebab2157ca2a7a5fda604c0
+
+I've created a new untiy project and forked the HW4 from prof's post.
+I downloaded the spirtes and made sprite editor slicing
+I added some piece of codes shapesbased on the break down mg4
