@@ -146,3 +146,24 @@ The Controller logic lives primarily in PlayerW5Demo2 and EnemyW5Demo2. PlayerW5
 
 Attendence: Nansong Sun, Rebecca Feng , Frances Nareh Kim
 Link:  https://docs.google.com/document/d/12oXcMbRqu-4vIfI7XU0rpLQhKyyF9Gy7RNBljYCJIrA/edit?tab=t.0#heading=h.y4j3q551ojs1
+
+## Week 6
+
+# Activity 1 
+ for demo1: 
+  In Demo1_Gizmos, I reviewed custom Gizmo scripts including CircleColliderGizmo and VelocityGizmo. The CircleColliderGizmo script uses a serialized CircleCollider2D reference and OnDrawGizmos to draw a wire sphere at the collider’s offset/radius. VelocityGizmo similarly uses OnDrawGizmos with a Rigidbody2D reference to draw a direction ray from current velocity. This is useful for us because we have many interactables and detection ranges; drawing pickup radius, talk radius, and movement vectors in Scene view would make tuning interactions faster and reduce guesswork. For our final project, I want Gizmos for NPC talk range, item collection radius, oven interaction zone, and quest objective areas.
+  for demo2:
+  In Demo2_Profiling, I looked at GameController code that spawns many fruit objects (_numFruit = 100) and stores them in a List<GameObject> _fruits. The script also includes a commented foreach debug loop in Update, which is a good reminder that repeated Debug.Log calls in loops can hurt performance. The scene reinforced profiling mindset: avoid expensive per-frame work unless needed, cache references, and move one-time setup into Start/Awake. For our game, this matters because inventory/UI/quest checks could become heavy if we run full validation every frame. I should use event-driven updates (only refresh UI when inventory/quest data changes) instead of constantly polling.
+  for demo3:
+  In Demo3_Breakpoints, I reviewed CapybaraW6Demo3 and GameControllerW6Demo3. CapybaraW6Demo3 includes a singleton pattern (public static Instance with duplicate guard in Start), movement input logic in Update, and a ResetLocation method. GameControllerW6Demo3 includes reset flow that destroys old fruit, clears/rebuilds the fruit list, respawns objects in world bounds, and resets player location. This was useful for understanding where to place breakpoints and inspect state transitions step-by-step (especially reset logic and list mutation). For our project, breakpoints will be important when debugging quest progression, recipe validation order, friendship unlock conditions, and fail/win state transitions.
+  Concrete ways I’ll apply this to our final project:
+    Add OnDrawGizmos for interaction radii (collectables, NPCs, oven).
+   Add Gizmos for spawn bounds and objective hotspots.
+   Keep heavy logic out of Update; use events for inventory/quest/UI sync.
+   Use breakpoints in quest controller, dialogue branch resolver, and recipe checker.
+   Use a controlled reset method (clear spawned objects + reset player + reset state) for testing loops.
+   Use singleton only for true global managers (carefully, to avoid over-coupling).
+
+# Activity 2
+Attendence: Nansong Sun Landon Peev Xwm Her( others are attending GDW talks that they informed us already)
+final proposal link: https://docs.google.com/document/d/12oXcMbRqu-4vIfI7XU0rpLQhKyyF9Gy7RNBljYCJIrA/edit?usp=sharing
