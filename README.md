@@ -167,3 +167,23 @@ Link:  https://docs.google.com/document/d/12oXcMbRqu-4vIfI7XU0rpLQhKyyF9Gy7RNBlj
 # Activity 2
 Attendence: Nansong Sun Landon Peev Xwm Her( others are attending GDW talks that they informed us already)
 final proposal link: https://docs.google.com/document/d/12oXcMbRqu-4vIfI7XU0rpLQhKyyF9Gy7RNBljYCJIrA/edit?usp=sharing
+
+
+
+## Week7
+# Activity1
+notes: in the week7 demoscene, theres a player object , multiple typical green trees object, a duck object and a special pink tree object.
+player use wasd to move and when the the player is too near and facing the duck object without obstacles, the duck will transform to a 
+red form (raged?) and start to chase the player object unless they lose direct sight( player hiding behind a tree). unlike other green trees,
+the special pink tree cant serve as a sight obstacle and the duck will rage as long as it sees the player object around that pink tree.
+
+# Activity 2
+attendance: Rebecca Feng Frances Nareh Kim Landon Peev Xwm Her Nansong Sun
+
+# Activity 3
+breakdown
+![IMG_3601](https://github.com/user-attachments/assets/72e69b74-1e7b-4833-b5e6-6313871ca3c2)
+
+# Activity 4
+spreadsheetlink:
+https://docs.google.com/spreadsheets/d/1Zv6t-jtaA3FyTzVV6nuGgsbLFK90LGVoSos6l5H0YpU/edit?gid=0#gid=0
