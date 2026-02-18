@@ -187,3 +187,8 @@ breakdown
 # Activity 4
 spreadsheetlink:
 https://docs.google.com/spreadsheets/d/1Zv6t-jtaA3FyTzVV6nuGgsbLFK90LGVoSos6l5H0YpU/edit?gid=0#gid=0
+
+# Activity 5
+https://github.com/fnkim/GDIM32-Final/commit/8a20e64254e3790f7b4631f53c643ee290bdd3b7
+I added 3 variant of prefabs to satisfy the different collectable resources from them ( blueberry, strawberry, lemon)and added a collider so player can interact and destroy them once steeping on
+
